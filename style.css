@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #121213;
+}
+.typer{
+    position: relative;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0002);
+}
+.typer::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 2px;
+    height: 100%;
+    background: #03e9f4;
+    animation:blink 0.8s steps(3) infinite;
+}
+@keyframes blink{
+    0%,75%{
+        opacity: 1;
+    }76%,100%{
+        opacity: 0;
+    }
+}
+.typer h2{
+    position: relative;
+    color:#03e9f4;
+    letter-spacing: 4px;
+    font-size: 4em;
+    text-transform: uppercase;
+    animation:type 8s steps(14) infinite;
+    overflow: hidden;
+}
+
+@keyframes type{
+    0%,90%,100%{
+        width: 0;
+    }
+    30%,60% {
+        width: 634px;
+    }
+}
